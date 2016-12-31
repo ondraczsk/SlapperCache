@@ -134,7 +134,7 @@ class Main extends PluginBase implements Listener {
         $playerZ = $nbt->Pos[2];
 
         $entity = Entity::createEntity($typeToUse, $level->getChunk($playerX >> 4, $playerZ >> 4), $nbt);
-        $entity->setNameTag("Â", "", str_replace($fileParts[2]));
+        $entity->setNameTag(str_replace("Â", "", $fileParts[2]));
         $entity->setNameTagAlwaysVisible();
         $entity->setNameTagVisible();
         if ($entity instanceof SlapperHuman) {
